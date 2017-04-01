@@ -83,7 +83,6 @@ public class DoctorLogin extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.doctor_login,container,false);
-
         Button doctorSignIn = (Button) x.findViewById(R.id.doctorSignInButton);
         doctorSignIn.setOnClickListener(this);
         return x;
