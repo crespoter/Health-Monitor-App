@@ -21,11 +21,12 @@ import static java.net.URLEncoder.encode;
 
 public class DoctorLogin extends Fragment implements View.OnClickListener{
     Sessions sessions;
+    String name;
     @Override
     public void onClick(View v) {
         final View fg = getView();
         assert fg != null;
-        String name = ((EditText) fg.findViewById(R.id.doctorEmail)).getText().toString();
+        name = ((EditText) fg.findViewById(R.id.doctorEmail)).getText().toString();
         String password = ((EditText)fg.findViewById(R.id.doctorPassword)).getText().toString();
         ValidateEmail val = new ValidateEmail();
         val.execute(name,password);
@@ -47,7 +48,7 @@ public class DoctorLogin extends Fragment implements View.OnClickListener{
             }
             else
             {
-                sessions.initialise(s,"doctor");
+                sessions.initialise(s,"doctor",name);
                 Intent i = new Intent(getContext(),DoctorMain.class);
                 getContext().startActivity(i);
             }

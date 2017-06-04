@@ -22,12 +22,12 @@ import static java.net.URLEncoder.encode;
 public class PatientLogin extends Fragment implements View.OnClickListener{
 
     Sessions sessions;
-
+    String name;
     @Override
     public void onClick(View v) {
         final View fg = getView();
         assert fg != null;
-        String name = ((EditText) fg.findViewById(R.id.patientEmail)).getText().toString();
+        name = ((EditText) fg.findViewById(R.id.patientEmail)).getText().toString();
         String password = ((EditText)fg.findViewById(R.id.patientPassword)).getText().toString();
         ValidateEmail val = new ValidateEmail();
         val.execute(name,password);
@@ -47,7 +47,7 @@ public class PatientLogin extends Fragment implements View.OnClickListener{
             }
             else
             {
-                sessions.initialise(s,"patient");
+                sessions.initialise(s,"patient",name);
                 Intent i = new Intent(getContext(),PatientMain.class);
                 getContext().startActivity(i);
             }

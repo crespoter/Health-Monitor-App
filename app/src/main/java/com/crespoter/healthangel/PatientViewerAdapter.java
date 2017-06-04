@@ -4,10 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,6 +71,7 @@ public class PatientViewerAdapter extends RecyclerView.Adapter<PatientViewerAdap
                 intent.putExtra("sex",patients.get(position).sex);
                 intent.putExtra("temperature",patients.get(position).temperature);
                 intent.putExtra("pulse",patients.get(position).pulse);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         patientLoginTab.setIcon(R.drawable.patient);
         tabs.addTab(patientLoginTab);
 
-        TabLayout.Tab doctorLoginTab = tabs.newTab();
+        TabLayout.Tab doctorLogin   Tab = tabs.newTab();
         doctorLoginTab.setText("Doctor Login");
         doctorLoginTab.setIcon(R.drawable.doctor);
         tabs.addTab(doctorLoginTab);
